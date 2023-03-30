@@ -1,0 +1,107 @@
+/*
+COLORS:
+
+- PRIMARY: #b6650c
+- ACCENT 
+#1345A2 
+#215Dce
+- TINTS #f0e0ce
+- SHADES: #965308
+- GREYS
+
+
+FONTS:
+
+- Font sizes (px)
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+
+- Font weights (API) 
+300 / 400 / 500
+
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto Slab", sans-serif;
+  line-height: 1;
+  font-weight: 300;
+  /* background-color: #965308; */
+  background-color: #f0e0ce;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+  background-color: #b6650c;
+  border-radius: 4px;
+}
+
+.logo {
+  height: 2.4rem;
+}
+
+.logo-icon {
+  width: 24px;
+  height: 24px;
+}
+
+.top-menu {
+  background-color: #f0e0ce;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.top-menu-list {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+}
+
+.landing-home-page {
+  /* background-color: #f0e0ce; */
+  /* background-color: aqua */
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 2fr;
+}
+
+.section {
+  margin-top: 1rem;
+  padding: 3rem 0 9.6rem 1.2rem;
+  border: 5px solid #b6650c;
+  border-radius: 2em;
+}
+.activity-text {
+  padding: 20px 0 0 1.2rem;
+  font-weight: 500;
+  font-size: 30px;
+  color: #965308;
+}
+
+/* THIS SECTION IS FOR THE LINK STATES */
+
+.top-menu-link:link,
+.top-menu-link:visited {
+  color: #965308;
+  text-decoration: none;
+  display: inline-block;
+  font-weight: 500;
+  font-size: 1.4rem;
+}
+
+.top-menu-link:hover {
+  background-color: #1345a2;
+  color: #f0e0ce;
+}
