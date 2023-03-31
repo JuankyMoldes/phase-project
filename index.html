@@ -6,12 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Library Project</title>
     <link rel="stylesheet" href="styles.css" />
+
+    <!-- Google Fonts API -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500;600&display=swap"
       rel="stylesheet"
     />
+    <!-- Script Module -->
     <script
       type="module"
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
@@ -22,23 +25,119 @@
     ></script>
   </head>
   <body>
-    <header class="header">
+    <header class="fixed-header">
       <a href="index.html">
         <ion-icon class="logo-icon" name="book-outline"></ion-icon>
       </a>
 
       <nav class="top-menu">
         <ul class="top-menu-list">
-          <li><a class="top-menu-link" href="#">Add Book</a></li>
+          <li>
+            <a class="top-menu-link add-book" href="#">Add Book</a>
+          </li>
           <li><a class="top-menu-link" href="#">My Bookshelf</a></li>
-          <li><a class="top-menu-link" href="#">Account</a></li>
+          <li><a class="top-menu-link" href="#">Groups</a></li>
         </ul>
       </nav>
     </header>
+
+    <div class="add-book-modal hidden">
+      <button class="close-modal">&times;</button>
+      <div class="modal-content-header">Add New Book</div>
+      <form class="book-form" action="#">
+        <div>
+          <label for="book-form-title">Title</label>
+          <input
+            id="book-form-title"
+            type="text"
+            placeholder="The Great Gatsby"
+            required
+          />
+        </div>
+        <div>
+          <label for="book-form-author">Author</label>
+          <input
+            id="book-form-author"
+            type="text"
+            placeholder="F. Scott Fitzgerald"
+            required
+          />
+        </div>
+        <div>
+          <label for="book-form-publisher">Publisher</label>
+          <input
+            id="book-form-publisher"
+            type="text"
+            placeholder="Charles Scribner's Sons"
+            required
+          />
+        </div>
+        <div>
+          <label for="book-form-isbn">ISBN</label>
+          <input
+            id="book-form-isbn"
+            type="text"
+            placeholder="000-00-00000-000-0"
+            required
+          />
+        </div>
+        <div>
+          <label for="book-form-price">Price</label>
+          <input
+            id="book-form-price"
+            type="text"
+            placeholder="$39.99"
+            required
+          />
+        </div>
+        <div>
+          <label for="book-form-copies">Copies</label>
+          <input id="book-form-copies" type="text" placeholder="4" required />
+        </div>
+      </form>
+      <div class="submit-book">
+        <button class="btn submit">Submit</button>
+        <button class="btn cancel">Cancel</button>
+      </div>
+    </div>
+
+    <div class="overlay hidden"></div>
+
     <main>
-      <div class="activity-text">Recent Activity</div>
-      <section class="landing-home-page">
-        <div class="section"></div>
+      <div class="activity-text recent">Recent Activity</div>
+      <section class="landing-home">
+        <div class="container container-activity"></div>
+      </section>
+      <div class="activity-text explore">Discover Groups</div>
+      <section class="discover-group">
+        <div class="container group">
+          <h2 class="group-card--heading">Science Fiction</h2>
+          <p class="group-card--info">
+            We are thrilled to announce the launch of our new science fiction
+            club, where we will explore the vast and exciting worlds of science
+            fiction literature.
+          </p>
+          <button id="sciencefic" class="btn join">Join</button>
+        </div>
+        <div class="container group">
+          <h2 class="group-card--heading">History</h2>
+          <p class="group-card--info">
+            I am pleased to announce the formation of our new History Book Club!
+            This club is open to anyone who has an interest in history, whether
+            you're a history buff or just looking to learn more about the past.
+          </p>
+          <button id="history" class="btn join">Join</button>
+        </div>
+        <div class="container group">
+          <h2 class="group-card--heading">Mystery</h2>
+          <p class="group-card--info">
+            This club is open to anyone who loves reading mysteries and
+            thrillers, from classic whodunits to modern suspense novels. Our
+            goal is to read and discuss a variety of mystery books, covering
+            different sub-genres and styles.
+          </p>
+          <button id="mystery" class="btn join">Join</button>
+        </div>
       </section>
     </main>
     <script src="scripts.js"></script>
