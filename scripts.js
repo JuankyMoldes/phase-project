@@ -1,22 +1,16 @@
 "use strict";
 
-const BookForm = {
-  Title: "",
-  Author: "",
-  Publisher: "",
-  ISBN: "",
-  Price: "",
-  Copies: "",
-  // Also contains a button
-};
-
 const addBook = document.querySelector(".add-book");
 const addBookModal = document.querySelector(".add-book-modal");
 const overlay = document.querySelector(".overlay");
 const closeModalBtn = document.querySelector(".close-modal");
 const body = document.querySelector("body");
-const joinBtn = document.querySelector(".join");
-const group = document.querySelector(".group");
+const scienceJoinBtn = document.getElementById("science");
+const historyJoinBtn = document.getElementById("history");
+const mysteryJoinBtn = document.getElementById("mystery");
+const scienceGroup = document.querySelector("science-group");
+const historyGroup = document.getElementById("history-group");
+const mysteryGroup = document.querySelector("mystery-group");
 
 const openModal = function () {
   addBookModal.classList.remove("hidden");
@@ -30,28 +24,42 @@ const closeModal = function () {
   body.style.overflow = "visible";
 };
 
-const hasJoined = function () {
-  group.style.backgroundColor = "#b6650c";
-  group.style.color = "#e2e2e2";
-  joinBtn.style.backgroundColor = "#e2e2e2";
-  joinBtn.style.color = "#333";
-  joinBtn.textContent = "Joined";
+const HasJoined = function () {
+  this.style.backgroundColor = "#b6650c";
+  this.style.color = "#e2e2e2";
+  this.style.backgroundColor = "#e2e2e2";
+  this.style.color = "#333";
+  this.textContent = "Joined";
 };
 
 const hasLeft = function () {
-  group.style.backgroundColor = "#f0e0ce";
-  group.style.color = "#333";
-  joinBtn.style.backgroundColor = "#b6650c";
-  joinBtn.style.color = "#e2e2e2";
-  joinBtn.textContent = "Join";
+  this.style.backgroundColor = "#f0e0ce";
+  this.style.color = "#333";
+  this.style.backgroundColor = "#b6650c";
+  this.style.color = "#e2e2e2";
+  this.textContent = "Join";
 };
 
 addBook.addEventListener("click", openModal);
 closeModalBtn.addEventListener("click", closeModal);
 document.querySelector(".cancel").addEventListener("click", closeModal);
 
-joinBtn.addEventListener("click", function () {
-  if (joinBtn.textContent === "Join") {
+scienceJoinBtn.addEventListener("click", function () {
+  if (scienceJoinBtn.textContent === "Join") {
+    hasJoined();
+  } else {
+    hasLeft();
+  }
+});
+historyJoinBtn.addEventListener("click", function () {
+  if (historyJoinBtn.textContent === "Join") {
+    hasJoined();
+  } else {
+    hasLeft();
+  }
+});
+mysteryJoinBtn.addEventListener("click", function () {
+  if (mysteryJoinBtn.textContent === "Join") {
     hasJoined();
   } else {
     hasLeft();
