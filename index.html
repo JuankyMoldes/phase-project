@@ -27,7 +27,8 @@
   <body>
     <header class="fixed-header">
       <a href="index.html">
-        <ion-icon class="logo-icon" name="book-outline"></ion-icon>
+        <!-- <ion-icon class="logo-icon" name="book-outline"></ion-icon> -->
+        <img class="logo-icon" src="nectar.PNG" />
       </a>
 
       <nav class="top-menu">
@@ -35,11 +36,15 @@
           <li>
             <a class="top-menu-link add-book" href="#">Add Book</a>
           </li>
-          <li><a class="top-menu-link" href="#">My Bookshelf</a></li>
-          <li><a class="top-menu-link" href="#">Groups</a></li>
+          <li>
+            <a class="top-menu-link" href="bookshelf.html">My Bookshelf</a>
+          </li>
+          <li><a class="top-menu-link" href="groups.html">Groups</a></li>
         </ul>
       </nav>
     </header>
+
+    <!-- MODAL SECTION -->
 
     <div class="add-book-modal hidden">
       <button class="close-modal">&times;</button>
@@ -96,21 +101,39 @@
         </div>
       </form>
       <div class="submit-book">
-        <button class="btn submit">Submit</button>
+        <button onclick="validForm()" class="btn submit">Submit</button>
         <button class="btn cancel">Cancel</button>
       </div>
     </div>
-
     <div class="overlay hidden"></div>
+    <!-- END OF MODAL SECTION -->
 
     <main>
-      <div class="activity-text recent">Recent Activity</div>
+      <!-- <div class="activity-text recent">Recent Activity</div>
       <section class="landing-home">
         <div class="container container-activity"></div>
+      </section> -->
+
+      <section class="intro-section" aria-label="Books inside Library">
+        <div class="intro-content">
+          <div class="intro-content--left">
+            <div class="intro-content-left-upper">
+              <h2 class="start-tour-heading">Start your collection here.</h2>
+              <p class="start-tour-message">
+                It's quick and easy, and you'll be able to keep track of all
+                your favorite books in one place.
+              </p>
+            </div>
+            <div class="intro-content--left-lower">
+              <ion-icon class="add-circle" name="add-circle"></ion-icon>
+              <span class="add-book-label">New book</span>
+            </div>
+          </div>
+        </div>
       </section>
       <div class="activity-text explore">Discover Groups</div>
       <section class="discover-group">
-        <div id="science" class="container group">
+        <div id="science-group" class="container group">
           <h2 class="group-card--heading">Science Fiction</h2>
           <p class="group-card--info">
             We are thrilled to announce the launch of our new science fiction

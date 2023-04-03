@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My groups</title>
+    <link rel="stylesheet" href="styles.css" />
+
+    <!-- Google Fonts API -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Script Module -->
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+  </head>
+  <body>
+    <header class="fixed-header">
+      <a href="index.html">
+        <!-- <ion-icon class="logo-icon" name="book-outline"></ion-icon> -->
+        <img class="logo-icon" src="nectar.PNG" />
+      </a>
+      <nav class="top-menu">
+        <ul class="top-menu-list">
+          <li>
+            <a class="top-menu-link add-book" href="#">Add Book</a>
+          </li>
+          <li>
+            <a class="top-menu-link" href="bookshelf.html">My Bookshelf</a>
+          </li>
+          <li><a class="top-menu-link" href="groups.html">Groups</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div class="add-book-modal hidden">
+      <button class="close-modal">&times;</button>
+      <div class="modal-content-header">Add New Book</div>
+      <form class="book-form" action="#">
+        <div>
+          <label for="book-form-title">Title</label>
+          <input
+            id="book-form-title"
+            type="text"
+            placeholder="The Great Gatsby"
+            required
+          />
+        </div>
+        <div>
+          <label for="book-form-author">Author</label>
+          <input
+            id="book-form-author"
+            type="text"
+            placeholder="F. Scott Fitzgerald"
+            required
+          />
+        </div>
+        <div>
+          <label for="book-form-publisher">Publisher</label>
+          <input
+            id="book-form-publisher"
+            type="text"
+            placeholder="Charles Scribner's Sons"
+            required
+          />
+        </div>
+        <div>
+          <label for="book-form-isbn">ISBN</label>
+          <input
+            id="book-form-isbn"
+            type="text"
+            placeholder="000-00-00000-000-0"
+            required
+          />
+        </div>
+        <div>
+          <label for="book-form-price">Price</label>
+          <input
+            id="book-form-price"
+            type="text"
+            placeholder="$39.99"
+            required
+          />
+        </div>
+        <div>
+          <label for="book-form-copies">Copies</label>
+          <input id="book-form-copies" type="text" placeholder="4" required />
+        </div>
+      </form>
+      <div class="submit-book">
+        <button onclick="validForm()" class="btn submit">Submit</button>
+        <button class="btn cancel">Cancel</button>
+      </div>
+    </div>
+    <div class="overlay hidden"></div>
+    <main>
+      <div class="activity-text explore">My groups</div>
+      <section class="my-books">
+        <div class="container"></div>
+      </section>
+    </main>
+    <script src="scripts.js"></script>
+  </body>
+</html>
