@@ -1,5 +1,7 @@
 "use strict";
 
+const BookArray = [];
+
 const addBook = document.querySelector(".add-book");
 const addBookModal = document.querySelector(".add-book-modal");
 const overlay = document.querySelector(".overlay");
@@ -9,6 +11,20 @@ const body = document.querySelector("body");
 const plusSign = document.querySelector(".add-circle");
 const newBookBtn = document.querySelector(".intro-content--left-lower");
 const submitBtn = document.querySelector(".submit");
+
+/*  EXAMPLE CODE ON HOW TO USE FORM TAB ON SUBMIT TO STORE VARIABLES TO LOCAL STORAGE 
+<script>
+  document.querySelector('form').onsubmit = function(e) {
+    e.preventDefault();
+    var name = document.querySelector('#recipe-name').value;
+    var description = document.querySelector('#recipe-description').value;
+    localStorage["name"] = name;
+    localStorage["description"] = description;
+    console.log(localStorage);
+  }
+</script>
+
+*/
 
 const logoIcon = document.querySelector(".logo-icon");
 
@@ -32,25 +48,16 @@ const closeModal = function () {
   overlay.classList.add("hidden");
   body.style.overflow = "visible";
 
-  document.getElementById("book-form-title").value = "";
-  document.getElementById("book-form-author").value = "";
-  document.getElementById("book-form-publisher").value = "";
-  document.getElementById("book-form-isbn").value = "";
-  document.getElementById("book-form-price").value = "";
-  document.getElementById("book-form-copies").value = "";
+  clearInputs();
 };
 
 const closeConfirm = function () {
-  document.getElementById("book-form-title").value = "";
-  document.getElementById("book-form-author").value = "";
-  document.getElementById("book-form-publisher").value = "";
-  document.getElementById("book-form-isbn").value = "";
-  document.getElementById("book-form-price").value = "";
-  document.getElementById("book-form-copies").value = "";
+  clearInputs();
 
   confirmModal.classList.add("hidden");
   addBookModal.classList.add("hidden");
   overlay.classList.add("hidden");
+  // localStorage.clear();
 };
 
 const scienceHasJoined = function () {
@@ -120,15 +127,24 @@ const BookUnhover = function () {
   newBookBtn.style.transitionDuration = "0.5s";
 };
 
-const logoHover = function () {
-  logoIcon.style.transitionDuration = "0.5s";
-  logoIcon.style.transform = "rotate(45deg)";
-};
+function clearInputs() {
+  document.getElementById("book-form-author").value = "";
+  document.getElementById("book-form-title").value = "";
+  document.getElementById("book-form-publisher").value = "";
+  document.getElementById("book-form-isbn").value = "";
+  document.getElementById("book-form-copies").value = "";
+  document.getElementById("book-form-price").value = "";
+}
 
-const logoUnhover = function () {
-  logoIcon.style.transitionDuration = "0.5s";
-  logoIcon.style.transform = "rotate(-45deg)";
-};
+// const logoHover = function () {
+//   logoIcon.style.transitionDuration = "0.5s";
+//   logoIcon.style.transform = "rotate(45deg)";
+// };
+
+// const logoUnhover = function () {
+//   logoIcon.style.transitionDuration = "0.5s";
+//   logoIcon.style.transform = "rotate(-45deg)";
+// };
 
 function validForm() {
   let formTitle = document.getElementById("book-form-title").value;
@@ -147,6 +163,32 @@ function validForm() {
   ) {
     addBookModal.classList.add("hidden");
     confirmModal.classList.remove("hidden");
+    let Title = String(formTitle);
+    let Author = String(formAuthor);
+    let Publisher = String(formPublish);
+    let ISBN = String(formISBN);
+    let Copies = String(formPrice);
+    let Price = String(formCopies);
+    let Book = {
+      title: Title,
+      author: Author,
+      publisher: Publisher,
+      isbn: ISBN,
+      copies: Copies,
+      price: Price,
+    };
+
+    let stringBook = JSON.stringify(Book);
+    let objectBook = JSON.parse(stringBook);
+
+    BookArray.push(objectBook);
+
+    const bookStringArray = JSON.stringify(BookArray);
+    window.localStorage.setItem("books", bookStringArray);
+
+    // console.log(objectBook);
+    console.log(BookArray);
+    clearInputs();
   } else {
     addBookModal.classList.add("bounce");
 
@@ -163,8 +205,8 @@ document.querySelector(".cancel").addEventListener("click", closeModal);
 newBookBtn.addEventListener("click", openModal);
 newBookBtn.addEventListener("mouseover", newBookHover);
 newBookBtn.addEventListener("mouseout", BookUnhover);
-logoIcon.addEventListener("mouseover", logoHover);
-logoIcon.addEventListener("mouseout", logoUnhover);
+// logoIcon.addEventListener("mouseover", logoHover);
+// logoIcon.addEventListener("mouseout", logoUnhover);
 submitBtn.addEventListener("click", validForm);
 
 scienceJoinBtn.addEventListener("click", function () {
