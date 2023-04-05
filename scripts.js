@@ -4,10 +4,15 @@ const addBook = document.querySelector(".add-book");
 const addBookModal = document.querySelector(".add-book-modal");
 const overlay = document.querySelector(".overlay");
 const closeModalBtn = document.querySelector(".close-modal");
+const closeConfirmBtn = document.querySelector(".close-confirm");
 const body = document.querySelector("body");
 const plusSign = document.querySelector(".add-circle");
 const newBookBtn = document.querySelector(".intro-content--left-lower");
 const submitBtn = document.querySelector(".submit");
+
+const logoIcon = document.querySelector(".logo-icon");
+
+const confirmModal = document.querySelector(".confirmation");
 
 const scienceJoinBtn = document.getElementById("science");
 const historyJoinBtn = document.getElementById("history");
@@ -15,13 +20,6 @@ const mysteryJoinBtn = document.getElementById("mystery");
 const scienceGroup = document.getElementById("science-group");
 const historyGroup = document.getElementById("history-group");
 const mysteryGroup = document.getElementById("mystery-group");
-
-// let formTitle = document.getElementById("book-form-title").value;
-// let formAuthor = document.getElementById("book-form-author").value;
-// let formPublish = document.getElementById("book-form-publisher").value;
-// let formISBN = document.getElementById("book-form-isbn").value;
-// let formPrice = document.getElementById("book-form-price").value;
-// let formCopies = document.getElementById("book-form-copies").value;
 
 const openModal = function () {
   addBookModal.classList.remove("hidden");
@@ -33,7 +31,6 @@ const closeModal = function () {
   addBookModal.classList.add("hidden");
   overlay.classList.add("hidden");
   body.style.overflow = "visible";
-  addBookModal.style.backgroundColor = "#f0e0ce";
 
   document.getElementById("book-form-title").value = "";
   document.getElementById("book-form-author").value = "";
@@ -41,6 +38,19 @@ const closeModal = function () {
   document.getElementById("book-form-isbn").value = "";
   document.getElementById("book-form-price").value = "";
   document.getElementById("book-form-copies").value = "";
+};
+
+const closeConfirm = function () {
+  document.getElementById("book-form-title").value = "";
+  document.getElementById("book-form-author").value = "";
+  document.getElementById("book-form-publisher").value = "";
+  document.getElementById("book-form-isbn").value = "";
+  document.getElementById("book-form-price").value = "";
+  document.getElementById("book-form-copies").value = "";
+
+  confirmModal.classList.add("hidden");
+  addBookModal.classList.add("hidden");
+  overlay.classList.add("hidden");
 };
 
 const scienceHasJoined = function () {
@@ -110,6 +120,16 @@ const BookUnhover = function () {
   newBookBtn.style.transitionDuration = "0.5s";
 };
 
+const logoHover = function () {
+  logoIcon.style.transitionDuration = "0.5s";
+  logoIcon.style.transform = "rotate(45deg)";
+};
+
+const logoUnhover = function () {
+  logoIcon.style.transitionDuration = "0.5s";
+  logoIcon.style.transform = "rotate(-45deg)";
+};
+
 function validForm() {
   let formTitle = document.getElementById("book-form-title").value;
   let formAuthor = document.getElementById("book-form-author").value;
@@ -125,9 +145,11 @@ function validForm() {
     formPrice &&
     formCopies
   ) {
-    window.location.href = "bookshelf.html";
+    addBookModal.classList.add("hidden");
+    confirmModal.classList.remove("hidden");
   } else {
     addBookModal.classList.add("bounce");
+
     setTimeout(function () {
       addBookModal.classList.remove("bounce");
     }, 1000);
@@ -136,10 +158,13 @@ function validForm() {
 
 addBook.addEventListener("click", openModal);
 closeModalBtn.addEventListener("click", closeModal);
+closeConfirmBtn.addEventListener("click", closeConfirm);
 document.querySelector(".cancel").addEventListener("click", closeModal);
 newBookBtn.addEventListener("click", openModal);
 newBookBtn.addEventListener("mouseover", newBookHover);
 newBookBtn.addEventListener("mouseout", BookUnhover);
+logoIcon.addEventListener("mouseover", logoHover);
+logoIcon.addEventListener("mouseout", logoUnhover);
 submitBtn.addEventListener("click", validForm);
 
 scienceJoinBtn.addEventListener("click", function () {

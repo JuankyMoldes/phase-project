@@ -14,7 +14,7 @@
       href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500;600&display=swap"
       rel="stylesheet"
     />
-    <!-- Script Module -->
+    <!-- Icons scripts module -->
     <script
       type="module"
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
@@ -26,10 +26,12 @@
   </head>
   <body>
     <header class="fixed-header">
-      <a href="index.html">
-        <!-- <ion-icon class="logo-icon" name="book-outline"></ion-icon> -->
-        <img class="logo-icon" src="nectar.PNG" />
-      </a>
+      <div class="logo-space">
+        <a href="index.html">
+          <img class="logo-icon" src="icon.png" />
+        </a>
+        <h2 class="title-logo">Sonorus</h2>
+      </div>
       <nav class="top-menu">
         <ul class="top-menu-list">
           <li>
@@ -42,6 +44,8 @@
         </ul>
       </nav>
     </header>
+
+    <!-- ADD BOOK MODAL -->
     <div class="add-book-modal hidden">
       <button class="close-modal">&times;</button>
       <div class="modal-content-header">Add New Book</div>
@@ -103,12 +107,37 @@
     </div>
     <div class="overlay hidden"></div>
 
+    <!-- CONFIRMATION MODAL -->
+    <div class="add-book-modal confirmation hidden">
+      <button class="close-modal close-confirm">&times;</button>
+      <ion-icon class="check-mark-icon" name="checkmark-circle"></ion-icon>
+
+      <h3 class="confirmation-header">Your book was added!</h3>
+      <div class="confirmation-details">
+        <div class="confirmation-left">
+          <span class="confirm-labels">Title: </span>
+          <span class="confirm-labels">Author: </span>
+          <span class="confirm-labels">Publisher: </span>
+          <span class="confirm-labels">ISBN: </span>
+          <span class="confirm-labels">Copies: </span>
+          <span class="confirm-labels">Price: </span>
+        </div>
+        <div class="goto-books-btn">
+          <button class="btn goto">
+            <a class="goto-link" href="bookshelf.html">Go to my Bookshelf</a>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="overlay hidden"></div>
+
     <main>
       <div class="activity-text explore">My books</div>
       <section class="my-books">
         <div class="container"></div>
       </section>
     </main>
+    <!-- My scripts Module -->
     <script src="scripts.js"></script>
   </body>
 </html>
