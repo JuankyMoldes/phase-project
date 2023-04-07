@@ -111,31 +111,78 @@
       <button class="close-modal close-confirm">&times;</button>
       <ion-icon class="check-mark-icon" name="checkmark-circle"></ion-icon>
 
-      <!-- CONFIRMATION MODAL -->
       <h3 class="confirmation-header">Your book was added!</h3>
       <div class="confirmation-details">
-        <div class="confirmation-left">
-          <span class="confirm-labels">Title: </span>
-          <span class="confirm-labels">Author: </span>
-          <span class="confirm-labels">Publisher: </span>
-          <span class="confirm-labels">ISBN: </span>
-          <span class="confirm-labels">Copies: </span>
-          <span class="confirm-labels">Price: </span>
-        </div>
-        <div class="goto-books-btn">
-          <button class="btn goto">
-            <a class="goto-link" href="bookshelf.html">Go to my Bookshelf</a>
-          </button>
-        </div>
+        <div class="confirmation-left"></div>
+      </div>
+      <div class="goto-books-btn">
+        <button class="btn goto">
+          <a class="goto-link" onclick="gotoBooks()">Go to my Bookshelf</a>
+        </button>
       </div>
     </div>
     <div class="overlay hidden"></div>
     <main>
       <div class="activity-text explore">My groups</div>
-      <section class="my-books">
-        <div class="container"></div>
+      <section class="my-groups">
+        <!-- DUMMY DATA  -->
+        <div class="container group">
+          <h2 class="group-card--heading">Science Fiction</h2>
+          <p class="group-card--info">
+            We are thrilled to announce the launch of our new science fiction
+            club, where we will explore the vast and exciting worlds of science
+            fiction literature.
+          </p>
+          <button id="science" class="btn join">Join</button>
+        </div>
+
+        <!-- END OF DUMMY DATA -->
       </section>
     </main>
+    <footer class="footer">
+      <div class="logo-space">
+        <a href="index.html">
+          <img class="logo-icon-foot" src="icon.png" />
+        </a>
+        <h2 class="title-logo">Sonorus</h2>
+      </div>
+
+      <div class="company">
+        <div>
+          <h2>Company</h2>
+          <span><a href="https://www.icf.com/">About ICF </a></span>
+          <!-- <span>Tower 2, Suite 4020</span> -->
+          <span><br /></span>
+          <!-- <span>Guaynabo, Puerto Rico</span> -->
+          <!-- <span>00968</span> -->
+          <span><br /></span>
+          <span><br /></span>
+          <span><a href="https://www.icf.com/careers">Careers</a></span>
+          <span><br /></span>
+          <span><br /></span>
+          <span><br /></span>
+          <span
+            ><a href="https://www.icf.com/company/about/partners"
+              >Business Partners</a
+            ></span
+          >
+        </div>
+      </div>
+
+      <div class="contact-us">
+        <h2>Contact us</h2>
+        <span>City View Plaza</span>
+        <span>Tower 2, Suite 4020</span>
+        <span><br /></span>
+        <span>Guaynabo, Puerto Rico</span>
+        <span>00968</span>
+        <span><br /></span>
+        <span><br /></span>
+        <span>787-407-0028</span>
+        <span><br /></span>
+        <span>JuanCarlos.MoldesHernandez@icf.com</span>
+      </div>
+    </footer>
     <script src="scripts.js"></script>
   </body>
 </html>
