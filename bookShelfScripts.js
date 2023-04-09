@@ -58,7 +58,6 @@ const displayBooks = function () {
     bookSection.insertAdjacentHTML("beforeend", html);
   });
 };
-displayBooks();
 
 const checkerID = function (clicked_id) {
   let selectedEl = document.getElementById(clicked_id);
@@ -67,8 +66,13 @@ const checkerID = function (clicked_id) {
   // selectedEl.style.animation = "mymove 3s forwards";
   let selectedId = selectedEl.querySelector(".details");
 
-  selectedId.classList.remove("hidden");
-  selectedId.style.animation = "mymove 1s forwards";
+  if (selectedId.classList.contains("hidden")) {
+    selectedId.classList.remove("hidden");
+    selectedId.style.animation = "mymove 1s forwards";
+  } else {
+    selectedId.style.animation = "mymove 1s reverse";
+    selectedId.classList.add("hidden");
+  }
 };
 
-bookContainers.addEventListener("click", checkerID);
+displayBooks();

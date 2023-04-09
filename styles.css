@@ -199,8 +199,8 @@ img {
   border-radius: 2em;
 }
 
-.container-groups {
-}
+/* .container-groups {
+} */
 
 .container-books {
   display: flex;
@@ -209,12 +209,18 @@ img {
   background-color: #f0e0ce;
   border: 5px solid #b6650c;
   position: relative;
+  transition: all 0.4s;
 
   margin: 2.5rem 75% 2.5rem 5rem;
-  padding: 1.2rem 2.8rem 1.2rem 1.2rem;
+  padding: 1.2rem 2rem 1.2rem 1.2rem;
   color: #333;
   border-radius: 15px;
   cursor: pointer;
+}
+
+.container-books:hover {
+  transform: translateY(-0.3rem);
+  box-shadow: 0 3.2rem 6.4rem rgba(0, 0, 0, 0.1);
 }
 
 .details {
@@ -223,8 +229,10 @@ img {
   color: #e2e2e2;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
-
-  height: 9rem;
+  height: 15rem;
+  width: 21rem;
+  padding-right: 1.6rem;
+  height: 11rem;
   gap: 25px;
   padding-top: 0.8rem;
   padding-bottom: 0.8rem;
@@ -260,6 +268,7 @@ img {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr;
+  min-height: 100vh;
 }
 
 .group {
@@ -575,13 +584,22 @@ img {
   font-weight: 400;
 }
 
+.group-joined {
+  background-color: #b6650c;
+  color: #e2e2e2;
+}
+.group-btn-joined {
+  background-color: #e2e2e2;
+  color: #333;
+}
+
 @keyframes mymove {
   from {
     left: -80px;
     opacity: 0%;
   }
   to {
-    left: 300px;
+    left: 400px;
     opacity: 100%;
   }
 }

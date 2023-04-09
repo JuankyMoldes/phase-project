@@ -1,6 +1,7 @@
 "use strict";
 
 let BookArray = [];
+let GroupArray = [];
 
 const addBook = document.querySelector(".add-book");
 const addBookModal = document.querySelector(".add-book-modal");
@@ -87,6 +88,7 @@ const scienceHasJoined = function () {
   scienceJoinBtn.style.backgroundColor = "#e2e2e2";
   scienceJoinBtn.style.color = "#333";
   scienceJoinBtn.textContent = "Joined";
+  localStorage.setItem("science", true);
 };
 
 const scienceHasLeft = function () {
@@ -95,6 +97,7 @@ const scienceHasLeft = function () {
   scienceJoinBtn.style.backgroundColor = "#b6650c";
   scienceJoinBtn.style.color = "#e2e2e2";
   scienceJoinBtn.textContent = "Join";
+  localStorage.removeItem("science");
 };
 
 const historyHasJoined = function () {
@@ -103,6 +106,7 @@ const historyHasJoined = function () {
   historyJoinBtn.style.backgroundColor = "#e2e2e2";
   historyJoinBtn.style.color = "#333";
   historyJoinBtn.textContent = "Joined";
+  localStorage.setItem("history", true);
 };
 
 const historyHasLeft = function () {
@@ -111,14 +115,16 @@ const historyHasLeft = function () {
   historyJoinBtn.style.backgroundColor = "#b6650c";
   historyJoinBtn.style.color = "#e2e2e2";
   historyJoinBtn.textContent = "Join";
+  localStorage.removeItem("history");
 };
 
 const fantasyHasJoined = function () {
   fantasyGroup.style.backgroundColor = "#b6650c";
   fantasyGroup.style.color = "#e2e2e2";
   fantasyJoinBtn.style.backgroundColor = "#e2e2e2";
-  mysteryJoinBtn.style.color = "#333";
+  fantasyJoinBtn.style.color = "#333";
   fantasyJoinBtn.textContent = "Joined";
+  localStorage.setItem("fantasy", true);
 };
 
 const fantasyHasLeft = function () {
@@ -127,6 +133,7 @@ const fantasyHasLeft = function () {
   fantasyJoinBtn.style.backgroundColor = "#b6650c";
   fantasyJoinBtn.style.color = "#e2e2e2";
   fantasyJoinBtn.textContent = "Join";
+  localStorage.removeItem("fantasy");
 };
 
 const poetryHasJoined = function () {
@@ -135,6 +142,7 @@ const poetryHasJoined = function () {
   poetryJoinBtn.style.backgroundColor = "#e2e2e2";
   poetryJoinBtn.style.color = "#333";
   poetryJoinBtn.textContent = "Joined";
+  localStorage.setItem("poetry", true);
 };
 
 const poetryHasLeft = function () {
@@ -143,6 +151,7 @@ const poetryHasLeft = function () {
   poetryJoinBtn.style.backgroundColor = "#b6650c";
   poetryJoinBtn.style.color = "#e2e2e2";
   poetryJoinBtn.textContent = "Join";
+  localStorage.removeItem("poetry");
 };
 
 const thrillerHasJoined = function () {
@@ -151,6 +160,7 @@ const thrillerHasJoined = function () {
   thrillerJoinBtn.style.backgroundColor = "#e2e2e2";
   thrillerJoinBtn.style.color = "#333";
   thrillerJoinBtn.textContent = "Joined";
+  localStorage.setItem("thriller", true);
 };
 
 const thrillerHasLeft = function () {
@@ -159,6 +169,7 @@ const thrillerHasLeft = function () {
   thrillerJoinBtn.style.backgroundColor = "#b6650c";
   thrillerJoinBtn.style.color = "#e2e2e2";
   thrillerJoinBtn.textContent = "Join";
+  localStorage.removeItem("thriller");
 };
 
 const mysteryHasJoined = function () {
@@ -167,6 +178,7 @@ const mysteryHasJoined = function () {
   mysteryJoinBtn.style.backgroundColor = "#e2e2e2";
   mysteryJoinBtn.style.color = "#333";
   mysteryJoinBtn.textContent = "Joined";
+  localStorage.setItem("mystery", true);
 };
 
 const mysteryHasLeft = function () {
@@ -175,6 +187,7 @@ const mysteryHasLeft = function () {
   mysteryJoinBtn.style.backgroundColor = "#b6650c";
   mysteryJoinBtn.style.color = "#e2e2e2";
   mysteryJoinBtn.textContent = "Join";
+  localStorage.removeItem("mystery");
 };
 
 function clearInputs() {
@@ -185,16 +198,6 @@ function clearInputs() {
   document.getElementById("book-form-copies").value = "";
   document.getElementById("book-form-price").value = "";
 }
-
-// const logoHover = function () {
-//   logoIcon.style.transitionDuration = "0.5s";
-//   logoIcon.style.transform = "rotate(45deg)";
-// };
-
-// const logoUnhover = function () {
-//   logoIcon.style.transitionDuration = "0.5s";
-//   logoIcon.style.transform = "rotate(-45deg)";
-// };
 
 function gotoBooks() {
   window.location.href = "./bookshelf.html";
@@ -223,8 +226,8 @@ function validForm() {
     let Author = String(formAuthor);
     let Publisher = String(formPublish);
     let ISBN = String(formISBN);
-    let Copies = String(formPrice);
-    let Price = String(formCopies);
+    let Copies = String(formCopies);
+    let Price = String(formPrice);
 
     let Book = {
       title: Title,
@@ -252,8 +255,6 @@ function validForm() {
       tempStore = [];
     }
     BookArray = [];
-
-    // clearInputs();
   } else {
     addBookModal.classList.add("bounce");
 
@@ -267,17 +268,6 @@ addBook.addEventListener("click", openModal);
 closeModalBtn.addEventListener("click", closeModal);
 closeConfirmBtn.addEventListener("click", closeConfirm);
 document.querySelector(".cancel").addEventListener("click", closeModal);
-// submitBtn.addEventListener("click", validForm);
-
-// Put newBookBtn into another scripts file (Non-home
-// pages have problems accessing other scripts functions)
-
-// newBookBtn.addEventListener("click", openModal);
-// newBookBtn.addEventListener("mouseover", newBookHover);
-// newBookBtn.addEventListener("mouseout", BookUnhover);
-
-// logoIcon.addEventListener("mouseover", logoHover);
-// logoIcon.addEventListener("mouseout", logoUnhover);
 
 scienceJoinBtn.addEventListener("click", function () {
   if (scienceJoinBtn.textContent === "Join") {
@@ -326,3 +316,22 @@ thrillerJoinBtn.addEventListener("click", function () {
     thrillerHasLeft();
   }
 });
+
+if (localStorage.getItem("science")) {
+  scienceHasJoined();
+}
+if (localStorage.getItem("history")) {
+  historyHasJoined();
+}
+if (localStorage.getItem("mystery")) {
+  mysteryHasJoined();
+}
+if (localStorage.getItem("fantasy")) {
+  fantasyHasJoined();
+}
+if (localStorage.getItem("poetry")) {
+  poetryHasJoined();
+}
+if (localStorage.getItem("thriller")) {
+  thrillerHasJoined();
+}

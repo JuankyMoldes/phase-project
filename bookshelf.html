@@ -14,6 +14,8 @@
       href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500;600&display=swap"
       rel="stylesheet"
     />
+
+ 
     <!-- Icons scripts module -->
     <script
       type="module"
@@ -81,23 +83,24 @@
           <label for="book-form-isbn">ISBN</label>
           <input
             id="book-form-isbn"
-            type="text"
-            placeholder="000-00-00000-000-0"
+            type="number"
+            placeholder="978-3-16-148410-0"
             required
           />
         </div>
         <div>
           <label for="book-form-price">Price</label>
+          <b><strong>$</strong></b>
           <input
             id="book-form-price"
-            type="text"
-            placeholder="$39.99"
+            type="number"
+            placeholder="39.99"
             required
           />
         </div>
         <div>
           <label for="book-form-copies">Copies</label>
-          <input id="book-form-copies" type="text" placeholder="4" required />
+          <input id="book-form-copies" type="number" placeholder="4" required />
         </div>
       </form>
       <div class="submit-book">
