@@ -36,7 +36,7 @@
   }
 
   .book-form input {
-    font-weight: 300;
+    font-weight: 400;
     font-size: 10px;
     margin: 0;
   }
@@ -90,9 +90,19 @@
     display: none;
   }
   .footer-sml {
-    display: block;
-    justify-content: center;
+    display: flex;
+    /* justify-content: center; */
     /* align-content: center; */
+  }
+
+  .logo-footer {
+    display: flex;
+  }
+
+  .logo-footer .logo-space {
+    display: block;
+    width: 10rem;
+    height: 5rem;
   }
 
   .hp {

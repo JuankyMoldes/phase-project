@@ -211,7 +211,7 @@ img {
   position: relative;
   transition: all 0.4s;
 
-  margin: 2.5rem 70% 2.5rem 5rem;
+  margin: 2.5rem 70% 4rem 5rem;
   padding: 1.2rem 2rem 1.2rem 1.2rem;
   color: #333;
   border-radius: 15px;
@@ -453,7 +453,7 @@ img {
 }
 
 .hidden {
-  display: none;
+  display: none !important;
 }
 
 /* THIS SECTION IS FOR THE LINK STATES */
