@@ -1,0 +1,147 @@
+@media (min-width: 1700px) {
+  .container-books {
+    margin: 0;
+    margin: 2.8rem 77% 1rem 1rem;
+  }
+}
+
+@media (min-width: 1900px) {
+  .container-books {
+    margin-right: 79%;
+  }
+}
+
+@media (max-width: 450px) {
+  .my-groups {
+    grid-template-columns: 1fr;
+    /* grid-template-rows: 1fr; */
+  }
+  .modal-content-header {
+    display: none;
+  }
+  .book-form {
+    grid-template-columns: 1fr;
+    position: relative;
+    margin-right: 1rem;
+    margin-top: 3rem;
+    width: auto;
+    height: auto;
+  }
+
+  .book-form label {
+    margin-top: 12px;
+    font-weight: 400;
+    font-size: 18px;
+  }
+
+  .book-form input {
+    font-weight: 400;
+    font-size: 16px;
+    margin: 0;
+  }
+
+  .close-modal {
+    /* display: none; */
+    margin-left: 8rem;
+  }
+  .add-book-modal {
+    grid-template-rows: 4fr 1fr;
+    width: 90%;
+    height: 55%;
+    margin-top: 3rem;
+  }
+  .my-books {
+    margin-top: 3.8rem;
+  }
+  .container-books {
+    gap: 2rem;
+    padding: 1rem 0;
+    margin: 0 1rem;
+    margin-bottom: 1rem;
+    transform: none;
+  }
+
+  .details {
+    /* grid-template-rows: 2fr 1fr; */
+    z-index: 0;
+    padding: 0;
+    gap: 1rem;
+
+    margin-left: 0.8rem;
+    margin-top: 1rem;
+
+    /* padding-left: 1rem; */
+    padding-top: 0.2rem;
+    padding-right: 1rem;
+    position: relative;
+    animation: none !important;
+    transition: none;
+    height: 9rem;
+    width: 95%;
+    top: 0;
+  }
+  .join {
+    width: 60%;
+  }
+  .group-card--heading {
+    font-size: 1.3rem;
+    margin-bottom: 0;
+    margin-top: 0.6rem;
+  }
+  .footer {
+    width: 100%;
+    display: none;
+  }
+  .footer-sml {
+    display: block;
+    justify-content: center;
+    /* align-content: center; */
+  }
+
+  .hp {
+    text-decoration: none;
+    text-transform: none;
+  }
+
+  .hp:visited,
+  .hp:active {
+    text-decoration: none;
+    text-transform: none;
+    color: #333;
+  }
+
+  .discover-group {
+    grid-template-columns: 1fr;
+  }
+  .group-card--info {
+    display: none;
+  }
+  .group {
+    grid-template-rows: 1fr;
+    width: auto;
+    height: 200px;
+  }
+
+  .group:hover {
+    transform: none;
+  }
+  .top-menu {
+    margin: 0 1rem;
+  }
+  .logo-space {
+    display: none;
+  }
+  .intro-content--left {
+    gap: 0.2rem;
+    margin: 30% 20% 2.3rem 3.2rem;
+    padding: 1.6rem;
+  }
+
+  .start-tour-message {
+    display: none;
+  }
+
+  .submit-book {
+    justify-content: space-between;
+  }
+}
