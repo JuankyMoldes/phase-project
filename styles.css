@@ -453,7 +453,7 @@ img {
 }
 
 .hidden {
-  display: none !important;
+  display: none;
 }
 
 /* THIS SECTION IS FOR THE LINK STATES */

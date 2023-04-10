@@ -96,7 +96,12 @@
   }
 
   .logo-footer {
+    border-top: 2px solid #b0b0b0;
+    background-color: #7b7b7b;
     display: flex;
+
+    justify-content: space-around;
+    padding: 4.8rem 0;
   }
 
   .logo-footer .logo-space {
