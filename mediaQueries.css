@@ -20,34 +20,31 @@
     display: none;
   }
   .book-form {
+    justify-items: left;
     grid-template-columns: 1fr;
     position: relative;
-    margin-right: 1rem;
-    margin-top: 3rem;
-    width: auto;
+    margin-left: 1rem;
+    margin-top: 0.5rem;
+    width: 50%;
     height: auto;
   }
 
   .book-form label {
     margin-top: 12px;
     font-weight: 400;
-    font-size: 18px;
+    font-size: 16px;
   }
 
   .book-form input {
     font-weight: 400;
-    font-size: 16px;
+    font-size: 12px;
     margin: 0;
   }
 
-  .close-modal {
-    /* display: none; */
-    margin-left: 8rem;
-  }
   .add-book-modal {
     grid-template-rows: 4fr 1fr;
     width: 90%;
-    height: 55%;
+    height: 80%;
     margin-top: 3rem;
   }
   .my-books {
@@ -137,11 +134,18 @@
     padding: 1.6rem;
   }
 
+  .add-book-label {
+    font-size: 24px;
+    margin-left: 20px;
+  }
+
   .start-tour-message {
     display: none;
   }
 
-  .submit-book {
-    justify-content: space-between;
+  .submit-book .btn {
+    margin: 0 36px;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
   }
 }
